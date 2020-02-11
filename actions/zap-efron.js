@@ -12,7 +12,7 @@ const person = process.argv.slice(2, 3)
 const message = process.argv.slice(3)
 
 async function run() {
-  const browser = await puppeteer.launch({ args })
+  const browser = await puppeteer.launch({ headless: false, args })
   const page = await browser.newPage()
 
   await page.goto('https://web.whatsapp.com/', { waitUntil: 'networkidle2' })
